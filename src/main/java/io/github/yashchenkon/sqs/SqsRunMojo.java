@@ -19,6 +19,7 @@ public class SqsRunMojo extends AbstractMojo {
     private Integer port;
 
     @Override
+    @SuppressWarnings("unchecked")
     public void execute() throws MojoExecutionException, MojoFailureException {
         final SQSRestServer server = SQSRestServerBuilder.withPort(port)
                 .withServerAddress(new NodeAddress("http", "localhost", port, "")).start();
